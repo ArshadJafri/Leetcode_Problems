@@ -3,31 +3,32 @@ class Solution {
 
         Set<Integer> set = new HashSet<>();
 
-        for(int num: nums){
+        // Step 1: add all numbers to set
+        for (int num : nums) {
             set.add(num);
         }
 
-        int maxLength =0;
+        int maxLength = 0;
 
-        for(int num: set){
-            if(!set.contains(num-1)){
-                int current  =num;
-                int length =1;
+        // Step 2: check each number as potential start
+        for (int num : set) {
 
-                while(set.contains(current+1)){
+            // only start if it's the beginning of sequence
+            if (!set.contains(num - 1)) {
+
+                int current = num;
+                int length = 1;
+
+                // expand sequence
+                while (set.contains(current + 1)) {
                     current++;
                     length++;
                 }
 
                 maxLength = Math.max(maxLength, length);
             }
-
-
-
         }
 
-      return maxLength;
-    }   
+        return maxLength;
+    }
 }
-
-   
