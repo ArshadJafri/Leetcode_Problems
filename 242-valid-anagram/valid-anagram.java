@@ -9,7 +9,6 @@ class Solution {
 
         for(char c : s.toCharArray()){
             map.put(c, map.getOrDefault(c,0)+1);
-
         }
 
         for(char c: t.toCharArray()){
@@ -21,10 +20,7 @@ class Solution {
 
             if(map.get(c) ==0){
                 map.remove(c);
-
             }
-
-
 
         }
         
