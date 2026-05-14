@@ -5,48 +5,45 @@ class Solution {
 
         HashSet<Character>[] rows = new HashSet[N];
         HashSet<Character>[] cols = new HashSet[N];
-        HashSet<Character>[] boxs = new HashSet[N];
+        HashSet<Character> [] boxs = new HashSet[N];
 
         for(int i =0; i< N;i++){
-            rows[i] = new HashSet<Character>();
-            cols[i] = new HashSet<Character>();
-            boxs[i] = new HashSet<Character>();
-        
+            rows[i]= new HashSet<>();
+            cols[i] = new HashSet<>();
+            boxs[i] = new HashSet<>();
         }
 
-        for(int i =0;i<N;i++){
-            for(int j =0 ;j<N;j++){
-
+        for(int i =0 ;i< N ;i++){
+            for(int j =0; j<N;j++){
+                
                 char val = board[i][j];
 
-                if(val =='.'){
+                if(val == '.'){
                     continue;
                 }
 
                 if(rows[i].contains(val)){
                     return false;
                 }
-
                 rows[i].add(val);
+
                 if(cols[j].contains(val)){
                     return false;
                 }
 
                 cols[j].add(val);
 
-                int ind = (i / 3) * 3 + (j / 3);
+                int ind = ((i/3)*3 +j/3);
+
                 if(boxs[ind].contains(val)){
                     return false;
                 }
 
                 boxs[ind].add(val);
-
-
-
             }
         }
-        
 
         return true;
+        
     }
 }
