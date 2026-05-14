@@ -7,7 +7,7 @@ class Solution {
             map.put(num, map.getOrDefault(num,0)+1);
         }
 
-        PriorityQueue<Integer> pq = new PriorityQueue(
+        PriorityQueue <Integer> pq = new PriorityQueue<>(
             (a,b) -> map.get(a) - map.get(b)
         );
 
@@ -17,15 +17,15 @@ class Solution {
             if(pq.size() >k){
                 pq.poll();
             }
+
         }
 
         int[] result = new int[k];
 
-        for(int i =k-1; i >= 0;i--)
-        {
+        for(int i = k-1; i>=0; i--){
             result[i] = pq.poll();
         }
-        
-        return result;
+
+    return result;    
     }
 }
