@@ -1,10 +1,12 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
+
+        n = len(nums)
+        targetSum =0
+        actualSum = (n*(n+1))//2
         
-        res = len(nums)
+        for i in nums:
+            targetSum += i
 
-        for i in range(len(nums)):
-            res ^=i
-            res ^=nums[i]
-
-        return res
+        return actualSum -  targetSum
+        
