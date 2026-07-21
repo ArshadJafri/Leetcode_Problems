@@ -2,14 +2,14 @@ class Solution {
     public int missingNumber(int[] nums) {
 
         int n = nums.length;
-        int sum = n*(n+1)/2;
-        int actualSum = 0;
+        int actualSum = (n*(n+1))/2;
+        int realSum = 0;
 
-        for(int num : nums){
-            actualSum += num;
+        for(int i =0;i< n; i++){
+            realSum += nums[i];
         }
 
-        return sum - actualSum;
+        return actualSum - realSum;
         
     }
 }
